@@ -9,17 +9,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="styleshhet" href="./assets/cs/styles.css" />
   </head>
-  <section class="section is-medium">
-    <h1 class="title">Medium section</h1>
-    <h2 class="subtitle">
-      A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
-    </h2>
-  </section>
   <body>
+    
+    <header class="has-background-dark p-5">
+        <h1 class="has-text-primary is-size-2 mgt-medium"> Game Finder(logo)</h1>
+    </header>
+
+
+  
+  </section>
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Game Finder</h1>
+        Game Finder
         <div class="container is-widescreen">
             <div class="notification is-primary">
             
@@ -27,10 +29,10 @@
                     <div class="column">
                       <h1 class="platform">Platform</h1>
                       <div class="select is-medium">
-                        <select>
-                          <option>select platform</option>
+                        <select class="has-background-dark has-text-white custome-border">
+                          <option>Select platform</option>
                           <option>Xbox</option>
-                          <option>PC</option>
+                          <option>Pc</option>
                           <option>Playstation</option>
                         </select>
                       </div>
@@ -38,24 +40,17 @@
                     <div class="column">
                        <h1 class = "genre">Genre</h1>
                       <div class="select is-medium">
-                        <select>
-                          <option>select genre</option>
-                          <option>Action</option>
-                          <option>Strategy</option>
-                          <option>RPG</option>
-                          <option>Shooter</option>
-                          <option>Adventure</option>
-                          <option>Puzzle</option>
-                          <option>Racing</option>
-                          <option>Sports</option>
+                        <select class="has-background-dark has-text-white">
+                          <option>Select genre</option>
+                          <option>With options</option>
                         </select>
                       </div>
                     </div>
                     <div class="column">
                     <h1 class="year">Year</h1>
                       <div class="select is-medium">
-                        <select>
-                          <option>select year</option>
+                        <select class="has-background-dark has-text-white">
+                          <option>Select dropdown</option>
                           <option>With options</option>
                         </select>
                       </div>
@@ -81,6 +76,17 @@
       </p>
     </div>
   </section>
+
+
+  <footer class="footer has-background-dark mgb-medium" >
+    <div class="content has-text-centered">
+      <p class ="has-text-light">
+        <strong class="has-text-primary">Game Finder</strong> by Adam Larue, Ian Mosur, and Sangki Jun. 
+      </p>
+    </div>
+  </footer>
+
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="assets/js/script.js"></script> 
