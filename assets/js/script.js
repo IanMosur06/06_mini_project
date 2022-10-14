@@ -7,7 +7,7 @@ const options = {
 	}
 };
 
-fetch('https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f104433ba2fee0058fd0a4bd', options)
+fetch('https://rawg-video-games-database.p.rapidapi.com/?key=9c9c4ff2f104433ba2fee0058fd0a4bd', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
@@ -29,11 +29,7 @@ fetch('https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f10443
     .catch(err => console.error(err));
 
 
+// Global variables
 
-
-
-
-
-
-
+var resultsBoxEl = document.querySelector('.Result-box');
 
