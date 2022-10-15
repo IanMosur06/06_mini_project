@@ -7,10 +7,24 @@ const options = {
 	}
 };
 
-fetch('https://rawg-video-games-database.p.rapidapi.com/?key=9c9c4ff2f104433ba2fee0058fd0a4bd', options)
+fetch('https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f104433ba2fee0058fd0a4bd',options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+  .then((completedata)=>{
+    let data1='';
+    completedata.map((values)=>{
+      data1=``
+    })
+
+
+
+  })
+  
+
+
+
 	.catch(err => console.error(err));
+
+  
 
 
 
@@ -31,5 +45,30 @@ fetch('https://rawg-video-games-database.p.rapidapi.com/?key=9c9c4ff2f104433ba2f
 
 // Global variables
 
-var resultsBoxEl = document.querySelector('.Result-box');
+// var resultsBoxEl = document.querySelector('.Result-box');
+
+// var getGameImages = function (games) {
+//   var apiUrl = 'https://rawg-video-games-database.p.rapidapi.com/games/' + games + '/results/backrgound_img'
+
+//   fetch(apiUrl)
+//     .then(function (response) {
+//       if (response.ok) {
+//         response.json().then(function (data) {
+//           displayImages(data, games);
+//         });
+//       } else {
+//         alert('Error: ' + response.statusText);
+//       }
+//     });
+// };
+
+
+// var displayImages = function ()
+
+  const apiUrl = 'https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f104433ba2fee0058fd0a4bd'
+    function getResults(){
+    const response =  fetch (apiUrl);
+    const data = response.json();
+    console.log(data);
+  };
 
