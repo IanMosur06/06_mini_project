@@ -15,19 +15,10 @@ fetch('https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f10443
       data1=``
     })
 
-
-
   })
-  
-
-
-
 	.catch(err => console.error(err));
 
   
-
-
-
 // Youtube API
   const youtube = {
     method: 'GET',
@@ -42,33 +33,4 @@ fetch('https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f10443
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
-
-// Global variables
-
-// var resultsBoxEl = document.querySelector('.Result-box');
-
-// var getGameImages = function (games) {
-//   var apiUrl = 'https://rawg-video-games-database.p.rapidapi.com/games/' + games + '/results/backrgound_img'
-
-//   fetch(apiUrl)
-//     .then(function (response) {
-//       if (response.ok) {
-//         response.json().then(function (data) {
-//           displayImages(data, games);
-//         });
-//       } else {
-//         alert('Error: ' + response.statusText);
-//       }
-//     });
-// };
-
-
-// var displayImages = function ()
-
-  const apiUrl = 'https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f104433ba2fee0058fd0a4bd'
-    function getResults(){
-    const response =  fetch (apiUrl);
-    const data = response.json();
-    console.log(data);
-  };
 
