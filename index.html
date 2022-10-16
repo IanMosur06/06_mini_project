@@ -20,13 +20,14 @@
     <!-- Main container -->
     <div class="container">
       <div class="notification is-primary">
+         <!-- Form start-->
         <div class="field">
           <label class="label">Search</label>
-          <div class="control">
+          <div class="control is-inline-block">
             <!-- Search bar -->
-            <input class="input" type="text" placeholder="Search here">
+            <input class="input custom-input" type="text" placeholder="Search here"> 
+            <button class="button is-dark custom-button"> Search </button>
           </div>
-          <p class="help">This is a help text</p>
         </div>
         <!-- container for columns -->
         <div class="container">
@@ -38,13 +39,10 @@
               <div class="game-img"></div>
             </div>
             <!-- div for second column -->
-            <div class="column custom-column">
+            <div id="game-info" class="column custom-column">
               Second column
               <!-- elements to append to -->
-              <h2 class="game-title"></h2>
-              <p class="game-genre"></p>
-              <p class="game-release"></p>
-              <p class="game-platform"></p>
+              
             </div>
             <!-- div for third column -->
             <div class="column is-one-quarter custom-column">
