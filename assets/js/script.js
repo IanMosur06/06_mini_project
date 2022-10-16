@@ -1,3 +1,12 @@
+// global variables
+// DOM references
+var searchInputEl = document.querySelector('.input')
+var imgEl = document.querySelector('.game-img');
+var titleEl = document.querySelector('.game-title');
+var genreEl = document.querySelector('.game-genre');
+var releaseEl = document.querySelector('.game-release');
+var platformEl = document.querySelector('.game-platform');
+
 // RAWG API
 const options = {
 	method: 'GET',
@@ -20,17 +29,17 @@ fetch('https://rawg-video-games-database.p.rapidapi.com/games?key=9c9c4ff2f10443
 
   
 // Youtube API
-  const youtube = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '4185a86540msh55a8448ac6e5678p149c46jsna834019ba73d',
-      'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
-    }
-  };
+const youtube = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '4185a86540msh55a8448ac6e5678p149c46jsna834019ba73d',
+    'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
+  }
+};
   
-  fetch('https://youtube138.p.rapidapi.com/channel/videos/?id=UCJ5v_MCY6GNUBTO8-D3XoAg&hl=en&gl=US', youtube)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+fetch('https://youtube138.p.rapidapi.com/channel/videos/?id=UCJ5v_MCY6GNUBTO8-D3XoAg&hl=en&gl=US', youtube)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
 
 
