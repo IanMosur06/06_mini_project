@@ -33,44 +33,32 @@ var searchBtn = document.querySelector ('.button')
 var imgEl = document.querySelector('.game-img');
 
 
-
-// fetch('https://rawg-video-games-database.p.rapidapi.com/games/grand-theft-auto-v?key=9c9c4ff2f104433ba2fee0058fd0a4bd', options)
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-
-
+function appendToHistory (gameName,data) {
+  var platform = data.platform;
+  console.log(platform)
+}
 
 
-// fetch game title
- async function fetchGameTitle(search) {
+
+
+
+
+
+// fetch game title and details
+async function fetchGameTitle(search) {
 
    await fetch(`https://api.rawg.io/api/games/${search}?key=9c9c4ff2f104433ba2fee0058fd0a4bd`, options)
     .then(response => response.json())
     .then(response => {
       if (response.redirect) {
         var gameName = response.slug
-        fetchGameTitle (gameName)        
+        fetchGameTitle (gameName)       
       }
       console.log(search)
       console.log(response)
     })
     .catch(err => console.error(err));
-
 }
-
-// var gameId = response.id
-//       fetchDetails(gameId)
-//       console.log(gameId)
-
-
-var fetchDetails = async function (gameId) {
-  await fetch(`https://api.rawg.io/api/games/grandtheftauto5?key=9c9c4ff2f104433ba2fee0058fd0a4bd`, options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-}
-
 
 searchBtn.addEventListener('click', function () {
   var gameSearchTest = document.getElementById('input').value
@@ -99,14 +87,3 @@ searchBtn.addEventListener('click', function () {
 
 
 
-// // function to display the searched game information
-// function renderSearchResults(gameName, data) {
-
-//   gameInfoEl.innerHTML = '';
-//   gameInfoEl.setAttribute('class', 'container')
-
-//   gameName = gameName.charAt(0).toUpperCase() + gameName.slice(1);
-
-//   // var genre = data.results.;
-
-// };
