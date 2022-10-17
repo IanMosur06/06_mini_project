@@ -75,3 +75,4 @@ function fetchGameInfo(genre, year, game) {
 	var apiUrl = `https://rawg-video-games-database.p.rapidapi.com/games=${gameGenre}${apiKey}`
 
 }
+
