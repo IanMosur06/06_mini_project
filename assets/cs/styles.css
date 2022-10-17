@@ -5,6 +5,10 @@
   height: 300px;
 }
 
+.label {
+  font-size: large;
+}
+
 .custom-column {
   border-radius: 1px;
   border-color: black;
