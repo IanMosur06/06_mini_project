@@ -22,14 +22,16 @@
 
 .custom-button {
   width: 150px;
-   
-   margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-.custom-input{
+.custom-input {
   width: 70vmax;
 }
 
+.custom-main {
+  height: auto;
+}
 @media screen and (max-width: 785px) {
   .column {
     width: 100%;
