@@ -21,3 +21,4 @@ function renderItems() {
     }
 }
 renderItems();
+getYoutubeId();
