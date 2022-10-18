@@ -4,7 +4,6 @@ var localStorage = {
   genreArray: [],
   rating: [],
 };
-
 // rawg api key
 var apiKey = '?key=9c9c4ff2f104433ba2fee0058fd0a4bd';
 
@@ -27,12 +26,16 @@ const youtube = {
 };
 
 // DOM references
-var gameInfoEl = document.getElementById('game-info');
-var searchBtn = document.querySelector('.button')
+r
+var searchBtn = document.querySelector ('.button')
 var imgEl = document.getElementById('game-img');
 var descriptionEl = document.getElementById('game-description')
 
+function appendToLocalStorage (data1, data2) {
+
+
 function appendToHistory(data1, data2) {
+
   //for (var i=0; i < 8; i++){
   //var platformData = data1[i].platform.name;
   //console.log(platformData);
@@ -43,23 +46,26 @@ function appendToHistory(data1, data2) {
   localStorage.setItem('game-img', img);
   var description = data2.description_raw;
   localStorage.setItem('game-description', description);
+  renderItems();
 }
 
 function renderItems() {
   var img = localStorage.getItem('game-img');
-  console.log(img);
-  imgEl.src = img;
   //platform
   //genre
   var description = localStorage.getItem('game-description');
+  
+  imgEl.src = img;
+  //platform
+  //genre
   descriptionEl.textContent = description;
 }
-renderItems()
+
 
 // fetch game title and details
 async function fetchGameTitle(search) {
-
-  await fetch(`https://api.rawg.io/api/games/${search}?key=9c9c4ff2f104433ba2fee0058fd0a4bd`, options)
+   await fetch(`https://api.rawg.io/api/games/${search}?key=9c9c4ff2f104433ba2fee0058fd0a4bd`, options)
+renderItems()
     .then(response => response.json())
     .then(response => {
       if (response.redirect) {
@@ -67,31 +73,26 @@ async function fetchGameTitle(search) {
         fetchGameTitle(gameName)
       }
       //console.log(search)
-      console.log(response)
-      appendToHistory(response.parent_platforms, response);
-      //appendToHistory()
+      //console.log(response)
+      appendToLocalStorage(response.parent_platforms, response);
     })
     .catch(err => console.error(err));
-
-
 }
 
-function handleFormSubmit(event) {
-  event.preventDefault;
-  var gameSearchTest = document.getElementById('input').value
-  fetchGameTitle(gameSearchTest);
+function handeSearchFormSubmit(event) {
+  event.preventDefault();
+  var gameSearch = document.getElementById('input').value;
+  if (!gameSearch) {
+    alert("Please enter a game title!");
+    return;
+  } else {
+    fetchGameTitle(gameSearch);
+  }
+  window.location.href="results.html"
 }
-searchBtn.addEventListener('click', handleFormSubmit());
 
 
-
-
-
-// searchBtn.addEventListener('click', function () {
-//   var gameSearchTest = document.getElementById('input').value
-//   fetchGameTitle(gameSearchTest);
-  //console.log(gameSearchTest)})
-
+searchBtn.addEventListener('click', handeSearchFormSubmit)
 
 // localStorage.setItem("game-data", JSON.stringify(localStorage));
 
