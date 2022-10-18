@@ -1,8 +1,8 @@
 // global variables
 var localStorage = {
-platformArray: [],
-genreArray: [],
-rating: [],
+  platformArray: [],
+  genreArray: [],
+  rating: [],
 };
 // rawg api key
 var apiKey = '?key=9c9c4ff2f104433ba2fee0058fd0a4bd';
@@ -26,16 +26,21 @@ const youtube = {
 };
 
 // DOM references
+r
 var searchBtn = document.querySelector ('.button')
 var imgEl = document.getElementById('game-img');
 var descriptionEl = document.getElementById('game-description')
 
 function appendToLocalStorage (data1, data2) {
+
+
+function appendToHistory(data1, data2) {
+
   //for (var i=0; i < 8; i++){
-    //var platformData = data1[i].platform.name;
-    //console.log(platformData);
-    //localStorage.platformArray.push(platformData);
-    //console.log(localStorage.platformArray);
+  //var platformData = data1[i].platform.name;
+  //console.log(platformData);
+  //localStorage.platformArray.push(platformData);
+  //console.log(localStorage.platformArray);
   //}
   var img = data2.background_image;
   localStorage.setItem('game-img', img);
@@ -56,14 +61,16 @@ function renderItems() {
   descriptionEl.textContent = description;
 }
 
+
 // fetch game title and details
 async function fetchGameTitle(search) {
    await fetch(`https://api.rawg.io/api/games/${search}?key=9c9c4ff2f104433ba2fee0058fd0a4bd`, options)
+renderItems()
     .then(response => response.json())
     .then(response => {
       if (response.redirect) {
         var gameName = response.slug
-        fetchGameTitle (gameName)       
+        fetchGameTitle(gameName)
       }
       //console.log(search)
       //console.log(response)
@@ -83,6 +90,7 @@ function handeSearchFormSubmit(event) {
   }
   window.location.href="results.html"
 }
+
 
 searchBtn.addEventListener('click', handeSearchFormSubmit)
 
