@@ -29,8 +29,8 @@ const youtube = {
 // DOM references
 var gameInfoEl = document.getElementById('game-info');
 var searchBtn = document.querySelector ('.button')
-var imgEl = document.querySelector('.game-img');
-
+var imgEl = document.getElementById('game-img');
+var descriptionEl = document.getElementById('game-description')
 
 function appendToHistory (data1, data2) {
   //for (var i=0; i < 8; i++){
@@ -42,17 +42,20 @@ function appendToHistory (data1, data2) {
   var img = data2.background_image;
   localStorage.setItem('game-img', img);
   var description = data2.description_raw;
-  localStorage.setItem('game-descrition', description)
+  localStorage.setItem('game-description', description);
 }
 
 function renderItems() {
   var img = localStorage.getItem('game-img');
-  
+  console.log(img);
+  imgEl.src = img;
+  //platform
+  //genre
+  var description = localStorage.getItem('game-description');
+  descriptionEl.textContent = description;
 }
 
 renderItems();
-
-
 
 // fetch game title and details
 async function fetchGameTitle(search) {
