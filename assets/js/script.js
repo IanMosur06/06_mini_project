@@ -20,14 +20,12 @@ const options = {
 const youtube = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '4185a86540msh55a8448ac6e5678p149c46jsna834019ba73d',
+    'X-RapidAPI-Key': '39cd710cfbmsh9cc223551facc72p1446a3jsn33a268761098',
     'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
   }
 };
-fetch('https://youtube138.p.rapidapi.com/channel/details/?id=UCJ5v_MCY6GNUBTO8-D3XoAg&hl=en&gl=US', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+
+
 
 
 
@@ -68,6 +66,23 @@ async function getGameFromSlug(slug) {
 }
 
 
+async function getYoutubeId () {
+ var getGameName = localStorage.getItem("gameSearch");
+ console.log(getGameName);
+  await fetch(`https://youtube138.p.rapidapi.com/search/?q=${getGameName}&hl=en&gl=US`, youtube)
+	.then(response => response.json())
+	.then(response => {
+       var getID = response.contents[0].video.videoId;
+       console.log(getID);
+       var videoPlayer = document.getElementById('player');
+       videoPlayer.setAttribute("src",`https://www.youtube.com/embed/${getID}`);
+       
+       
+  })
+	.catch(err => console.error(err))
+}
+
+
 // fetch game title and details
 async function fetchGameTitle(search) {
 console.log(search)
@@ -96,6 +111,8 @@ function handeSearchFormSubmit(event) {
     return;
   } else {
     fetchGameTitle(gameSearch);
+    getYoutubeId(gameSearch);
+   localStorage.setItem("gameSearch",gameSearch);
   }
   window.location.href="results.html"
 }
