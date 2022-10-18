@@ -1,5 +1,4 @@
 // global variables
-
 var localStorage = {
 platformArray: [],
 genreArray: [],
@@ -33,14 +32,25 @@ var searchBtn = document.querySelector ('.button')
 var imgEl = document.querySelector('.game-img');
 
 
-function appendToHistory (gameName,data) {
-  var platform = data.platform;
-  console.log(platform)
+function appendToHistory (data1, data2) {
+  //for (var i=0; i < 8; i++){
+    //var platformData = data1[i].platform.name;
+    //console.log(platformData);
+    //localStorage.platformArray.push(platformData);
+    //console.log(localStorage.platformArray);
+  //}
+  var img = data2.background_image;
+  localStorage.setItem('game-img', img);
+  var description = data2.description_raw;
+  localStorage.setItem('game-descrition', description)
 }
 
+function renderItems() {
+  var img = localStorage.getItem('game-img');
+  
+}
 
-
-
+renderItems();
 
 
 
@@ -54,19 +64,23 @@ async function fetchGameTitle(search) {
         var gameName = response.slug
         fetchGameTitle (gameName)       
       }
-      console.log(search)
+      //console.log(search)
       console.log(response)
+      appendToHistory(response.parent_platforms, response);
+      //appendToHistory()
     })
     .catch(err => console.error(err));
+  
+  
 }
 
 searchBtn.addEventListener('click', function () {
   var gameSearchTest = document.getElementById('input').value
   fetchGameTitle(gameSearchTest);
-  console.log(gameSearchTest)})
+  //console.log(gameSearchTest)})
 
 
-
+})
 // localStorage.setItem("game-data", JSON.stringify(localStorage));
 
 // if(localStorage.getItem("game-data") !== null){
