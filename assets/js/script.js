@@ -33,12 +33,12 @@ var searchBtn = document.querySelector ('.button')
 var imgEl = document.querySelector('.game-img');
 
 
-function appendToHistory (gameName,data) {
+function appendToHistory (search,data) {
   var platform = data.platform;
   console.log(platform)
 }
 
-
+appendToHistory()
 
 
 
