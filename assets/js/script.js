@@ -25,8 +25,8 @@ function appendToLocalStorage(data1, data2) {
   var description = data2.description_raw;
   localStorage.setItem('game-img', img);
   localStorage.setItem('game-description', description);
-  localStorage.setItem('platforms', JSON.stringify(storage.platformArray));
-  localStorage.setItem('genres', JSON.stringify(storage.genreArray));
+  localStorage.setItem('platforms',storage.platformArray);
+  localStorage.setItem('genres',storage.genreArray);
   window.location.href="results.html";
 }
 
