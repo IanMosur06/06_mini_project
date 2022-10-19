@@ -5,6 +5,10 @@
   height: 300px;
 }
 
+.header {
+  color: rgb(71, 136, 247);
+}
+
 .label {
   font-size: large;
 }
@@ -13,6 +17,28 @@
   border-radius: 1px;
   border-color: black;
   border-style: solid;
+  height: fit-content;
+  margin: 15px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.information {
+  height: auto;
+}
+
+.youtube {
+  height: 300px;
+}
+
+.imgBox {
+  display: block;
+}
+
+.textInfo {
+  color: black;
+  font-weight: 200;
+  font-family: sans-serif;
 }
 
 .custom-flex {
@@ -26,6 +52,7 @@
 }
 
 .custom-input {
+  position: sticky;
   width: 70vmax;
 }
 
@@ -33,8 +60,8 @@
   height: auto;
 }
 
-.custom-card{
-bottom: 500px;
+.custom-card {
+  bottom: 500px;
 }
 
 .custom-section {
@@ -42,13 +69,47 @@ bottom: 500px;
 }
 .background-img {
   position: relative;
-  object-fit:cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+.subtitle {
+  display: flex;
+  justify-content: center;
+}
 
+.headerText {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-weight: 700;
+  text-decoration: underline;
+}
 
+.custom-container {
+  display: flex;
+  column-gap: 10px;
+  background-color: #000000d0;
+} 
+
+body {
+ margin-bottom: 0;
+ background-color: black;
+ height: max-content;
+}
+
+.custom-notif {
+background-color: rgb(71, 136, 247);
+}
+
+.foot {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  bottom: 0;
+}
 
 @media screen and (max-width: 785px) {
   .column {
