@@ -9,19 +9,19 @@ function renderItems() {
     var platforms = localStorage.getItem("platforms").split('[]');
     var genres = localStorage.getItem("genres").split("[]");
 
-    imgEl.setAttribute("src", img)
+    imgEl.setAttribute("src", img);
     descriptionEl.textContent = "Description: " + description;
     for (let index = 0; index < platforms.length; index++) {
         const element = platforms[index];
-        const p = document.createElement("p")
+        const p = document.createElement("p");
         p.textContent = "Platforms: " + element;
-        descriptionEl.appendChild(p)
+        descriptionEl.appendChild(p);
     }
     for (let index = 0; index < genres.length; index++) {
         const element = genres[index];
-        const p = document.createElement("p")
+        const p = document.createElement("p");
         p.textContent = "Genres: " + element;
-        descriptionEl.appendChild(p)
+        descriptionEl.appendChild(p);
     }
 }
 
