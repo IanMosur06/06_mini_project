@@ -11,6 +11,8 @@ Adam Larue<br />
 GitHub Profile: https://github.com/adamlarue19<br />
 Sangki Jun<br />
 GitHub Profile: https://github.com/sangki810<br />
+Ian Mosur<br />
+GitHub Profile: https://github.com/IanMosur06<br />
 
 Assets: <br />
 Game API:<br />
