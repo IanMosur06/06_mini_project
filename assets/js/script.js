@@ -91,11 +91,12 @@ async function getYoutubeId () {
 }
 
 //function to handle form submit
-function handeSearchFormSubmit(event) {
+function handleSearchFormSubmit(event) {
   event.preventDefault();
-  var gameSearch = document.getElementById('search').value;
+  var userGameSearch = document.getElementById('search').value;
+  var gameSearch = userGameSearch.replace(/\s+/g, '-');
   if (!gameSearch) {
-    alert("Please enter a game title!");
+    //alert("Please enter a game title!");
     return;
   } else {
     fetchGameTitle(gameSearch);
@@ -105,4 +106,4 @@ function handeSearchFormSubmit(event) {
 }
 
 // event listener to listen for a "click" on search button
-searchBtn.addEventListener('click', handeSearchFormSubmit)
+searchBtn.addEventListener('click', handleSearchFormSubmit);
