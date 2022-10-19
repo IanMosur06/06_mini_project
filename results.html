@@ -9,20 +9,20 @@
   <title>Game Finder</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/cs/styles.css" />
+  <script src="https://kit.fontawesome.com/7009df59f8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header class="has-background-dark p-5">
-    <h1 class="has-text-primary is-size-2 mgt-medium"> Game Finder(logo)</h1>
+    <h1 class="header is-size-2 mgt-medium"> Game Finder <i class="fas fa-gamepad"></i></h1>
   </header>
 
   <section class="section">
     <!-- Main container -->
-    <div class="container">
-      <div class="notification is-primary">
+    <div class="container custom-container">
+      <div class="notification custom-notif">
          <!-- Form start-->
         <div class="field">
-          <label class="label"></label>
           <div class="control is-inline-block">
         </div>
         <!-- container for columns -->
@@ -30,42 +30,48 @@
           <!-- first columns div -->
           <div class="columns">
             <div class="column is-one-quarter custom-column">
-              First column
+            <div class="imgBox">
+              <div class="headerText">Game</div>
               <!-- div for img of game -->
               <div>
                 <img id="game-img"/>
               </div>
             </div>
+            </div>
             <!-- div for second column -->
             <div class="column custom-column">
-              Second column
+              <div class="information">
+              <div class="headerText">Game Information</div>
               <!-- elements to append to -->
+              <div class="textInfo">
                 <p id="game-description"></p>
+            </div>
+          </div>
             </div>
             <!-- div for third column -->
             <div class="column is-one-quarter custom-column">
-              Third column
-              <iframe id="player" class="hidden" width="420" height="315"
+              <div class="youtube">
+              <div class="headerText"> Youtube Link</div>
+              <iframe id="player" class="hidden" width="300" height="250"
               src="https://www.youtube.com/embed/">
               </iframe>
-              
+              </div>
 
             </div>
           </div>
-          <p class="subtitle">Find the games you like anytime!</p>
         </div>
       </div>
     </div>
   </section>
-
+<div class="foot">
   <footer class="footer has-background-dark mgb-medium custom-footer">
     <div class="content has-text-centered">
       <p class="has-text-light">
-        <strong class="has-text-primary">Game Finder</strong> by Adam Larue, Ian Mosur, and Sangki Jun.
+        <strong class="header">Game Finder</strong> by Adam Larue, Ian Mosur, and Sangki Jun.
       </p>
     </div>
   </footer>
-
+</div>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="./assets/js/script.js"></script>

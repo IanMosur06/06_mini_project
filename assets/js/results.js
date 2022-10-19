@@ -5,8 +5,8 @@ var genreEL;
 function renderItems() {
     var img = localStorage.getItem('game-img');
     var description = localStorage.getItem('game-description');
-    //platform
-    //genre
+    // platform
+    // genre
 
 
     imgEl.setAttribute("src", img)

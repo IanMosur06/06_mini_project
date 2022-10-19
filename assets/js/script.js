@@ -17,17 +17,13 @@ const options = {
 };
 
 // Youtube API
-const youtube = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '39cd710cfbmsh9cc223551facc72p1446a3jsn33a268761098',
-    'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
-  }
-};
-
-
-
-
+// const youtube = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '39cd710cfbmsh9cc223551facc72p1446a3jsn33a268761098',
+//     'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
+//   }
+// };
 
 // DOM references
 var searchBtn = document.querySelector('.custom-button')
@@ -39,6 +35,7 @@ function appendToLocalStorage(data1, data2) {
     var platformData = data1[index].platform.name;
     console.log(platformData);
     storage.platformArray.push(platformData);
+ 
   }
   for (let i = 0; i < data2.genres.length; i++ ) {
     var genreData = data2.genres[i].name;
@@ -50,6 +47,7 @@ function appendToLocalStorage(data1, data2) {
   localStorage.setItem('game-description', description);
   localStorage.setItem('platforms', JSON.stringify(storage.platformArray));
   localStorage.setItem('genres', JSON.stringify(storage.genreArray));
+  window.location.href="results.html"
 }
 
 
@@ -114,7 +112,7 @@ function handeSearchFormSubmit(event) {
     getYoutubeId(gameSearch);
    localStorage.setItem("gameSearch",gameSearch);
   }
-  window.location.href="results.html"
+
 }
 
 
