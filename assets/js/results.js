@@ -1,6 +1,7 @@
 // DOM references
 var imgEl = document.getElementById('game-img');
 var descriptionEl = document.getElementById('game-description')
+var returnBtn = document.querySelector('.custom-return')
 
 // function to render data onto the page
 function renderItems() {
@@ -28,3 +29,14 @@ function renderItems() {
 // calls function above and fetch youtube api from script.js
 renderItems();
 getYoutubeId();
+
+function returnToHomePage(event){
+event.preventDefault();
+window.location.href="index.html";
+}
+
+
+
+
+
+returnBtn.addEventListener('click', returnToHomePage)
