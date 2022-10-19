@@ -22,3 +22,5 @@ https://rapidapi.com/Glavier/api/youtube138
 ## License
 N/A
 ## Links and Screenshot
+https://ianmosur06.github.io/Project-1-Game-Finder-by-Adam-Larue-Sangki-Jun-and-Ian-Mosur/<br />
+![](./assets/images/Game%20Finder.jpg)
